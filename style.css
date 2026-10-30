@@ -599,3 +599,7 @@ footer p {
     transition-duration: 0.01ms !important;
   }
 }
+
+nav a {
+     color: #ff6666;
+}
