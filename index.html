@@ -20,8 +20,11 @@
       <a href="#about">認識倉鼠</a>
       <a href="#care">照顧小教室</a>
       <a href="#gallery">萌照相簿</a>
+      <a href="#shop">倉鼠小舖</a>
     </nav>
-    <a class="header-button" href="#care">開始探索 <span aria-hidden="true">↗</span></a>
+    <button class="header-button cart-trigger" type="button" aria-label="開啟購物車，0 件商品">
+      <span aria-hidden="true">🛒</span> 購物車 <span class="cart-count" aria-live="polite">0</span>
+    </button>
   </header>
 
   <main>
@@ -80,6 +83,67 @@
       <p class="care-disclaimer">每隻倉鼠的需求都不同，飼養前請先查詢可靠的專業照護資訊。</p>
     </section>
 
+    <section class="shop-section" id="shop">
+      <div class="section-heading shop-heading">
+        <div>
+          <p class="eyebrow">THE HAMMY SHOP</p>
+          <h2>把可愛和好心情帶回家</h2>
+        </div>
+        <p>倉鼠週邊與療癒特調，<br class="desktop-break">今天想帶哪一份回家？</p>
+      </div>
+      <div class="product-grid">
+        <article class="product-card">
+          <div class="product-art art-home" aria-hidden="true">🏠</div>
+          <div class="product-info">
+            <span class="product-category">倉鼠週邊</span>
+            <h3>窩心小屋擺飾</h3>
+            <p>迷你小屋造型，為桌面添一點可愛。</p>
+            <div class="product-purchase">
+              <strong>NT$ 320</strong>
+              <button class="add-to-cart" type="button" data-product-id="hamster-home">加入購物車</button>
+            </div>
+          </div>
+        </article>
+        <article class="product-card">
+          <div class="product-art art-plush" aria-hidden="true">🧸</div>
+          <div class="product-info">
+            <span class="product-category">倉鼠週邊</span>
+            <h3>倉鼠抱抱吊飾</h3>
+            <p>毛茸茸的療癒夥伴，陪你一起出門。</p>
+            <div class="product-purchase">
+              <strong>NT$ 180</strong>
+              <button class="add-to-cart" type="button" data-product-id="hamster-plush">加入購物車</button>
+            </div>
+          </div>
+        </article>
+        <article class="product-card">
+          <div class="product-art art-melon" aria-hidden="true">🍈</div>
+          <div class="product-info">
+            <span class="product-category">店長特調</span>
+            <h3>瓜瓜奶霜特調</h3>
+            <p>清爽瓜果香搭配綿密奶霜的想像系特調。</p>
+            <div class="product-purchase">
+              <strong>NT$ 150</strong>
+              <button class="add-to-cart" type="button" data-product-id="melon-drink">加入購物車</button>
+            </div>
+          </div>
+        </article>
+        <article class="product-card">
+          <div class="product-art art-berry" aria-hidden="true">🍓</div>
+          <div class="product-info">
+            <span class="product-category">店長特調</span>
+            <h3>莓莓啵啵特調</h3>
+            <p>酸甜莓果與啵啵口感，喝一口好心情。</p>
+            <div class="product-purchase">
+              <strong>NT$ 160</strong>
+              <button class="add-to-cart" type="button" data-product-id="berry-drink">加入購物車</button>
+            </div>
+          </div>
+        </article>
+      </div>
+      <p class="shop-disclaimer">商品與特調為示意內容，尚未提供實際販售或付款服務。</p>
+    </section>
+
     <section class="gallery-section" id="gallery">
       <div class="gallery-copy">
         <p class="eyebrow">A LITTLE JOY</p>
@@ -103,5 +167,29 @@
     <p>照片來源：Unsplash。照片依 Unsplash 授權使用；點擊可查看倉鼠照片。</p>
     <span>用一點可愛，陪你度過今天。</span>
   </footer>
+
+  <div class="cart-backdrop" data-close-cart hidden></div>
+  <aside class="cart-drawer" id="cart-drawer" role="dialog" aria-modal="true" aria-labelledby="cart-title" aria-hidden="true" hidden>
+    <div class="cart-header">
+      <div>
+        <p class="eyebrow">YOUR LITTLE BAG</p>
+        <h2 id="cart-title">購物車</h2>
+      </div>
+      <button class="cart-close" type="button" aria-label="關閉購物車">×</button>
+    </div>
+    <div class="cart-items" aria-live="polite"></div>
+    <div class="cart-empty">
+      <span aria-hidden="true">🐹</span>
+      <p>購物車還空空的，<br>去小舖逛逛吧！</p>
+      <button class="cart-continue" type="button">看看商品</button>
+    </div>
+    <div class="cart-footer" hidden>
+      <div class="cart-total"><span>合計</span><strong>NT$ 0</strong></div>
+      <p>此為展示購物車，尚未串接付款功能。</p>
+      <button class="checkout-button" type="button">前往結帳</button>
+    </div>
+  </aside>
+  <p class="cart-status" role="status" aria-live="polite"></p>
+  <script src="store.js" defer></script>
 </body>
 </html>
