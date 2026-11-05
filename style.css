@@ -13,6 +13,7 @@
 
 * {
   box-sizing: border-box;
+  cursor: url("hamster-cursor.svg") 16 16, auto;
 }
 
 html {
@@ -977,4 +978,10 @@ body{
   .cart-drawer {
     padding: 22px 20px;
   }
+}
+
+body button[class],
+body a[href],
+body [role="button"] {
+  cursor: url("hamster-cursor.svg") 16 16, pointer;
 }
