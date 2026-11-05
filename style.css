@@ -980,6 +980,136 @@ body{
   }
 }
 
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    translate: 0 16px;
+  }
+
+  to {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+
+@keyframes gentle-float {
+  0%,
+  100% {
+    translate: 0 0;
+  }
+
+  50% {
+    translate: 0 -8px;
+  }
+}
+
+@keyframes sparkle-twinkle {
+  0%,
+  100% {
+    opacity: 0.55;
+    scale: 0.85;
+    rotate: -10deg;
+  }
+
+  50% {
+    opacity: 1;
+    scale: 1.15;
+    rotate: 12deg;
+  }
+}
+
+@keyframes avatar-hop {
+  0%,
+  100% {
+    translate: 0 0;
+  }
+
+  50% {
+    translate: 0 -5px;
+  }
+}
+
+@keyframes sticker-sway {
+  0%,
+  100% {
+    rotate: 0deg;
+  }
+
+  50% {
+    rotate: -7deg;
+  }
+}
+
+.hero-copy > * {
+  animation: fade-up 650ms both;
+}
+
+.hero-copy > :nth-child(2) {
+  animation-delay: 90ms;
+}
+
+.hero-copy > :nth-child(3) {
+  animation-delay: 180ms;
+}
+
+.hero-copy > :nth-child(4) {
+  animation-delay: 270ms;
+}
+
+.hero-copy > :nth-child(5) {
+  animation-delay: 360ms;
+}
+
+.photo-frame {
+  animation: fade-up 700ms 120ms both, gentle-float 5s 900ms ease-in-out infinite;
+}
+
+.sparkle-one {
+  animation: sparkle-twinkle 2.4s ease-in-out infinite;
+}
+
+.sparkle-two {
+  animation: sparkle-twinkle 2.8s 700ms ease-in-out infinite;
+}
+
+.avatar-stack span {
+  animation: avatar-hop 1.8s ease-in-out infinite;
+}
+
+.avatar-stack span:nth-child(2) {
+  animation-delay: 180ms;
+}
+
+.avatar-stack span:nth-child(3) {
+  animation-delay: 360ms;
+}
+
+.gallery-sticker {
+  animation: sticker-sway 4s ease-in-out infinite;
+}
+
+.product-art {
+  transition: scale 180ms ease;
+}
+
+.product-card:hover .product-art {
+  scale: 1.08;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-copy > *,
+  .photo-frame,
+  .sparkle,
+  .avatar-stack span,
+  .gallery-sticker {
+    animation: none !important;
+  }
+
+  .product-art {
+    transition: none;
+  }
+}
+
 body button[class],
 body a[href],
 body [role="button"] {
